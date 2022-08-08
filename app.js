@@ -103,4 +103,4 @@ app.get('/scripture-text', async (_req, res) => {
 	}
 })
 
-app.listen(PORT, () => console.log(`server running on PORT ${process.env.PORT || PORT}`))
+app.listen(process.env.PORT || PORT, () => console.log(`server running on PORT ${process.env.PORT || PORT}`))
