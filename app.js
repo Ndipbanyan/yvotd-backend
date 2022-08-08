@@ -1,4 +1,4 @@
-const PORT = 8080
+import 'dotenv/config'
 import { books } from './Books.mjs'
 import axios from 'axios'
 import cheerio from 'cheerio'
@@ -8,7 +8,7 @@ import cors from 'cors'
 app.use(cors())
 
 const url = 'https://www.bible.com/verse-of-the-day'
-
+const PORT = 8080
 // function to get the verse shortenener
 const getVerseShortener = (verse) => {
 	const verseArray = verse.split(' ')
@@ -103,4 +103,4 @@ app.get('/scripture-text', async (_req, res) => {
 	}
 })
 
-app.listen(PORT, () => console.log(`server running on PORT ${PORT}`))
+app.listen(PORT, () => console.log(`server running on PORT ${process.env.PORT || PORT}`))
