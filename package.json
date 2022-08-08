@@ -1,0 +1,20 @@
+{
+	"name": "verse-of-the-day-scrapper",
+	"version": "1.0.0",
+	"description": "This is the backend for the yvotd chrome extension that scrapes https://www.bible.com for verse of the day and version",
+	"main": "app.js",
+	"type": "module",
+	"scripts": {
+		"start": "nodemon app.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Ndipbanyan",
+	"license": "ISC",
+	"dependencies": {
+		"axios": "^0.27.2",
+		"cheerio": "^1.0.0-rc.12",
+		"cors": "^2.8.5",
+		"express": "^4.18.1",
+		"nodemon": "^2.0.19"
+	}
+}
