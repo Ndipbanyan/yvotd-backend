@@ -7,6 +7,7 @@ const app = express()
 import cors from 'cors'
 app.use(cors())
 
+console.log('apikey', process.env.UNSPLASH_ACCESS_KEY)
 const url = 'https://www.bible.com/verse-of-the-day'
 const PORT = 8080
 // function to get the verse shortenener
@@ -22,10 +23,13 @@ const getVerseShortener = (verse) => {
 	return shortenedBook
 }
 
-app.get('/', function (req, res) {
+app.get('/', function (_req, res) {
 	res.json('Verse of the day scrapper')
 })
-
+app.get('/keys', function (req, res) {
+	const keys = { unsplash: process.env.UNSPLASH_ACCESS_KEY, supabase: process.env.SUPABASE_KEY }
+	res.json(keys)
+})
 app.get('/verse', (_req, res) => {
 	axios(url)
 		.then((response) => {
