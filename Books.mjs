@@ -17,6 +17,7 @@ const books = {
 	Nehemiah: 'NEH',
 	Esther: 'EST',
 	Job: 'JOB',
+	Psalm: 'PSA',
 	Psalms: 'PSA',
 	Proverbs: 'PRO',
 	Ecclesiastes: 'ECC',
